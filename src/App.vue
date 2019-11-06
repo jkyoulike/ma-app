@@ -1,9 +1,14 @@
 <template>
   <div id="app">
     <div class="header">
-      <div class="header-left"><span class="iconfont">&#xe610;</span></div>
+      <div class="header-left">
+          <div class="iconfont">&#xe610;</div>
+      </div>
       <div class="header-input">
-        <input type="text">
+        <span class="iconfont">&#xe647;</span> 输入城市/景点/游玩主题
+      </div>
+      <div class="header-righe">城市
+      <span class="iconfont">&#xe736;</span>
       </div>
     </div>
     <router-view/>
@@ -22,21 +27,30 @@ body{
   padding: 0;
 }
 .header{
-  height: 3rem;
-  background:rgb(88, 208, 245);
+  background:#00afc7;
+  line-height:4rem;
+  display:flex;
 }
 .header-left{
   float: left;
+  width:2rem;
+  color:#fff;
+  margin-left:1rem;
 }
-.header-left .iconfont{
-  font-size: 24px;
-  fill: aliceblue;
-  color: aliceblue;
-  margin-left: 1rem;
-  margin-right: 1rem;
+.header-input{
+  height:2rem;
+  line-height:2rem;
+  color:#ccc;
+  flex:1;
+  background:#fff;
+  margin-top:1rem;
+  border-radius:5px;
 }
-.header-input input{
-  height: 2rem;
-  width: 10rem;
+.header-righe{
+  margin:0rem 1rem 0rem 1rem;
+  color:#fff;
+  font-weight:bold;
+  font-family:"宋体";
 }
+
 </style>
