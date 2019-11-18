@@ -28,29 +28,28 @@ body{
 }
 .header{
   background:#00afc7;
-  line-height:4rem;
   display:flex;
+  line-height:2rem;
+  font-size: .2rem;
 }
 .header-left{
   float: left;
-  width:2rem;
   color:#fff;
-  margin-left:1rem;
+  line-height: 3rem;
+  margin-left: 1rem;
+  margin-right: 0.5rem;
 }
 .header-input{
-  height:2rem;
-  line-height:2rem;
   color:#ccc;
   flex:1;
   background:#fff;
-  margin-top:1rem;
-  border-radius:5px;
+  margin:0.5rem ; 
+  border-radius:.2rem;
+
 }
 .header-righe{
-  margin:0rem 1rem 0rem 1rem;
-  color:#fff;
-  font-weight:bold;
-  font-family:"宋体";
+  margin: 0.5rem 0.5rem 0.5rem 0rem;
+  color: #fff;
 }
 
 </style>
