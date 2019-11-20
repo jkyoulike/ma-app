@@ -1,53 +1,15 @@
 <template>
     <div class="icons">
-        <div class="icon">
+        <swiper :options="swiperOption">
+            <swiper-slide v-for='(page, index) of pages' :key='index'>
+        <div class="icon"  v-for="item of page" :key="item.id">
             <div class="icon-img">
-                <img class="icon-img-content" src="@/assets/img/1.png" alt="">
+                <img class="icon-img-content" :src="item.imgUrl" alt="">
             </div>
-            <div class="icons-desc">景点门票</div>
+            <div class="icons-desc">{{item.desc}}</div>
         </div>
-        <div class="icon">
-            <div class="icon-img">
-                <img class="icon-img-content" src="@/assets/img/2.png" alt="">
-            </div>
-            <div class="icons-desc">滑雪季</div>
-        </div>
-        <div class="icon">
-            <div class="icon-img">
-                <img class="icon-img-content" src="@/assets/img/3.png" alt="">
-            </div>
-            <div class="icons-desc">泡温泉</div>
-        </div>
-        <div class="icon">
-            <div class="icon-img">
-                <img class="icon-img-content" src="@/assets/img/4.png" alt="">
-            </div>
-            <div class="icons-desc">植物园</div>
-        </div>
-        <div class="icon">
-            <div class="icon-img">
-                <img class="icon-img-content" src="@/assets/img/5.png" alt="">
-            </div>
-            <div class="icons-desc">游乐园</div>
-        </div>
-        <div class="icon">
-            <div class="icon-img">
-                <img class="icon-img-content" src="@/assets/img/6.png" alt="">
-            </div>
-            <div class="icons-desc">必游榜单</div>
-        </div>
-        <div class="icon">
-            <div class="icon-img">
-                <img class="icon-img-content" src="@/assets/img/8.png" alt="">
-            </div>
-            <div class="icons-desc">演出</div>
-        </div>
-        <div class="icon">
-            <div class="icon-img">
-                <img class="icon-img-content" src="@/assets/img/7.png" alt="">
-            </div>
-            <div class="icons-desc">城市观光</div>
-        </div>
+            </swiper-slide>
+        </swiper>
     </div>
 
 </template>
@@ -55,7 +17,60 @@
 export default {
   name: 'HomeIcons',
   data (){
-}
+      return{
+          iconList: [{
+        id: '001',
+        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
+        desc: '景点门票'
+      }, {
+        id: '002',
+        imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20194/3ef092d0a89ffddb7f781cda30c8ae49.png',
+        desc: '错峰出行'
+      }, {
+        id: '003',
+        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/ea/01d081dacb03cc02.png',
+        desc: '赏秋色'
+      }, {
+        id: '004',
+        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
+        desc: '一日游'
+      }, {
+        id: '005',
+        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/fa/2548667cb6e902.png',
+        desc: '上海自然博物馆'
+      }, {
+        id: '006',
+        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png',
+        desc: '黄浦江游船'
+      }, {
+        id: '007',
+        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png',
+        desc: '上海野生'
+      }, {
+        id: '008',
+        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/de/f26be47a6bf02a02.png',
+        desc: '上海迪士尼'
+      }, {
+        id: '009',
+        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/8246f27355943202.png',
+        desc: '世纪公园'
+      }]
+    }
+},
+computed: {
+    pages () {
+      const pages = []
+      this.iconList.forEach((item, index) => {
+        //index是图标数组的索引，利用索引除以8来计算是否分页
+        const page = Math.floor(index / 8)
+        if (!pages[page]) {
+          pages[page] = []
+        }
+        pages[page].push(item)
+      })
+      return pages
+    }
+  }
 }
 </script>
 
