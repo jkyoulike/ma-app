@@ -3,7 +3,8 @@
     <home-header :city='city'></home-header>
     <home-swiper :list='swiperList'></home-swiper>
     <home-icons :list='iconList'></home-icons>
-    <home-hot :list='hotList'></home-hot> 
+    <home-hot :list='hotList'></home-hot>
+    <home-weekend :list='weekendList'></home-weekend>
 </div>
 </template>
 
@@ -12,6 +13,7 @@ import HomeHeader from './components/header'
 import HomeSwiper from './components/swiper'
 import HomeIcons from './components/Icons'
 import HomeHot from './components/hot'
+import HomeWeekend from './components/weekend'
 import axios from  'axios'
 export default {
   name: 'Home',
@@ -19,7 +21,8 @@ export default {
       HomeHeader,
       HomeSwiper,
       HomeIcons,
-      HomeHot
+      HomeHot,
+      HomeWeekend
   },
   data (){
     return{
@@ -27,7 +30,8 @@ export default {
       swiperList:[],
       iconList:[],
       HotList:[],
-      likeList:[]
+      likeList:[],
+      weekendList:[]
     }
   },
   methods:{
@@ -43,6 +47,7 @@ export default {
         this.swiperList=data.swiperList
         this.iconList=data.iconList
         this.hotList=data.hotList
+        this.weekendList=data.weekendList
       }
     }
   },

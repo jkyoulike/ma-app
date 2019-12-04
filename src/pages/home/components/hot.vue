@@ -82,8 +82,11 @@ export default {
     margin: 0;
     text-align: center;
     font-size: .24rem;
-    line-height: .32rem;
+    line-height: 1rem;
     color: #212121;
+    overflow: hidden; /*自动隐藏文字*/
+    text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+    white-space: nowrap;/*强制不换行*/
 }
 .price{
     text-align: center;
