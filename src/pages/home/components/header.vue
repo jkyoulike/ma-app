@@ -7,9 +7,11 @@
       <div class="header-input">
         <span class="iconfont">&#xe647;</span> 输入城市/景点/游玩主题
       </div>
+      <router-link to="/city">
       <div class="header-righe">{{this.city}}
       <span class="iconfont">&#xe736;</span>
       </div>
+      </router-link>
     </div>
     <router-view/>
   </div>
